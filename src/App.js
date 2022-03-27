@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import {usePath} from './custom/usePath'
+import "./index.css"
 
-function App() {
+
+
+const App = () => {
+  const [path, setPath] = useState('useContext')
+  
+
+  const routes = usePath(path)
+
+  // useEffect(() => {
+  //   const res = window.prompt('Type which kind of hooks you want to see. For example of useEffect type "useEffect", "useState"', 'useState')
+  //   console.log(res);
+  //   setPath(res)
+  // }, [])
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className='main'>{routes}</main>
+  )
 }
 
-export default App;
+export default App
